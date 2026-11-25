@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Week-end insolite en amoureux</title>
+<style>
+  :root {
+    --rose: #e11d74;
+    --vert: #2f7a4d;
+    --violet: #6d28d9;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    background: linear-gradient(160deg, #1b1023 0%, #2d1533 55%, #451a3e 100%);
+    color: #fff;
+    min-height: 100vh;
+  }
+  main { max-width: 480px; margin: 0 auto; padding: 32px 20px 60px; }
+  h1 { text-align: center; font-size: 1.7em; margin: 0 0 6px; }
+  .sub { text-align: center; color: #e9c9dd; margin: 0 0 30px; font-style: italic; }
+  .card {
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 18px;
+    margin-bottom: 18px;
+    overflow: hidden;
+    backdrop-filter: blur(4px);
+  }
+  .choice {
+    width: 100%;
+    display: flex; align-items: center; gap: 14px;
+    background: none; border: none; color: #fff;
+    font-family: inherit; font-size: 1.15em;
+    padding: 20px 22px; cursor: pointer; text-align: left;
+  }
+  .choice .emoji { font-size: 1.9em; }
+  .choice .arrow { margin-left: auto; transition: transform .3s; color: #e9c9dd; }
+  .card.open .arrow { transform: rotate(90deg); }
+  .links { display: none; padding: 4px 22px 18px; }
+  .card.open .links { display: block; }
+  a.tile {
+    display: block;
+    background: rgba(255,255,255,.12);
+    border-radius: 12px;
+    padding: 13px 16px;
+    margin-top: 10px;
+    color: #fff;
+    text-decoration: none;
+    transition: background .2s;
+  }
+  a.tile:hover { background: rgba(255,255,255,.22); }
+  a.tile span.htm { display: block; font-size: .8em; opacity: .75; margin-top: 3px; font-family: system-ui, sans-serif; }
+  #loverooms .choice { color: #ffd2e8; }
+  #bulles .choice { color: #d7c9ff; }
+  #cabanes .choice { color: #cdeedd; }
+  footer { text-align: center; color: #b9a0b4; font-size: .85em; margin-top: 36px; font-family: system-ui, sans-serif; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Notre week-end en amoureux 💝</h1>
+  <p class="sub">Choisis ton style, et découvre les hébergements...</p>
+
+  <div class="card" id="loverooms">
+    <button class="choice" onclick="toggle('loverooms')">
+      <span class="emoji">💕</span> Love rooms
+      <span class="arrow">›</span>
+    </button>
+    <div class="links">
+      <a class="tile" href="https://www.laparenthese-loveroom.fr/" target="_blank">La Parenthèse — Gironde<span>Love room haut de gamme avec jacuzzi, près de Bordeaux et Saint-Émilion</span></a>
+      <a class="tile" href="https://suitecosy.com/-Gironde" target="_blank">Suite Cosy Gironde — Bordeaux<span>Suites avec jacuzzi, spa et sauna privatifs</span></a>
+      <a class="tile" href="https://lovenspa.fr/collections/love-room-bordeaux" target="_blank">Love'nSpa Bordeaux<span>Grande sélection de love rooms autour de Bordeaux</span></a>
+    </div>
+  </div>
+
+  <div class="card" id="bulles">
+    <button class="choice" onclick="toggle('bulles')">
+      <span class="emoji">✨</span> Bulles sous les étoiles
+      <span class="arrow">›</span>
+    </button>
+    <div class="links">
+      <a class="tile" href="https://bullesdolive.fr/" target="_blank">Bulles d'Olive — Drôme provençale<span>Bulle transparente au milieu des oliviers, près de Nyons</span></a>
+      <a class="tile" href="https://www.nuitenbulle.fr/" target="_blank">Domaine des Coumayres, « Bella Dome » — Hérault<span>Dômes en pleine nature dans le Sud</span></a>
+      <a class="tile" href="https://www.insoolite.fr/hebergements-insolites/dme/" target="_blank">Bulle Olea — Drôme<span>Bulle transparente avec spa, à partir d'environ 150 € la nuit</span></a>
+    </div>
+  </div>
+
+  <div class="card" id="cabanes">
+    <button class="choice" onclick="toggle('cabanes')">
+      <span class="emoji">🌳</span> Cabanes dans les arbres
+      <span class="arrow">›</span>
+    </button>
+    <div class="links">
+      <a class="tile" href="https://www.domaine-ecotelia.com/cabane-dans-les-arbres-sud-ouest.php" target="_blank">Domaine Ecôtelia — Gironde<span>Cabanes perchées, dont un temple avec spa, en campagne girondine</span></a>
+      <a class="tile" href="https://www.cabane-spa.com/" target="_blank">Cabane &amp; Spa — Sud-Ouest<span>Cabane avec spa et sauna privatisés, ambiance bougies</span></a>
+      <a class="tile" href="https://www.tourisme-gironde.fr/hebergements/week-end-nature-dormir-en-cabane-dans-les-arbres-ou-en-lodge-dans-le-sud-ouest/" target="_blank">Les Cabanes de Parentis — Landes<span>Jacuzzi privatif et petit-déjeuner livré au pied de l'arbre</span></a>
+    </div>
+  </div>
+
+  <footer>Cadeau de Clem 💛 — bon week-end à nous deux !</footer>
+</main>
+
+<script>
+  function toggle(id) {
+    document.getElementById(id).classList.toggle('open');
+  }
+</script>
+</body>
+</html>
